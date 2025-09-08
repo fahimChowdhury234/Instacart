@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instacart Shoppers - Get Paid to Shop</title>
+    <!-- Tailwind CSS via CDN -->
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://shoppers.instacart.com/packs/applicants/media/fonts/Instacart_Sans_Text-SemiBold-b7454372.woff2"
+        rel="stylesheet" />
+    <style>
+        @font-face {
+            font-weight: 400;
+            src: url("./src/fonts/Instacart_Sans_Headline-Regular-dbb0eb2d.woff2") format("woff2");
+            font-family: "Instacart Sans Headline";
+            font-display: swap;
+        }
+
+        @font-face {
+            font-weight: 500;
+            src: url("./src/fonts/Instacart_Sans_Headline-SemiBold-0ae30b67.woff2") format("woff2");
+            font-family: "Instacart Sans Headline";
+            font-display: swap;
+        }
+
+        @font-face {
+            font-weight: 700;
+            src: url("./src/fonts/Instacart_Sans_Headline-Bold-9651c11c.woff2") format("woff2");
+            font-family: "Instacart Sans Headline";
+            font-display: swap;
+        }
+
+        @font-face {
+            font-weight: 400;
+            src: url("./src/fonts/Instacart_Sans_Subhead-Regular-bcf5b60b.woff2") format("woff2");
+            font-family: Instacart Sans Subhead;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-weight: 400;
+            src: url("./src/fonts/Instacart_Sans_Text-Regular-b0d04ed2.woff2") format("woff2");
+            font-family: "Instacart Sans Regular";
+            font-display: swap;
+        }
+
+        @font-face {
+            font-weight: 500;
+            src: url("./src/fonts/Instacart_Sans_Text-SemiBold-b7454372.woff2") format("woff2");
+            font-family: "Instacart Sans Regular";
+            font-display: swap;
+        }
+
+        @font-face {
+            font-weight: 700;
+            src: url("./src/fonts/Instacart_Sans_Text-Bold-97d87ff1.woff2") format("woff2");
+            font-family: "Instacart Sans Regular";
+            font-display: swap;
+        }
+
+        @font-face {
+            font-weight: 400;
+            src: url("./src/fonts/Instacart_Contrast_Subhead-Regular-9e2f6b95.woff2") format("woff2");
+            font-family: "Instacart Contrast Subhead";
+            font-display: swap;
+        }
+
+        @font-face {
+            font-weight: 600;
+            src: url("./src/fonts/Instacart_Contrast_Subhead-SemiBold-7960a222.woff2") format("woff2");
+            font-family: "Instacart Contrast Subhead";
+            font-display: swap;
+        }
+
+        body {
+            font-family: "Instacart Sans Regular";
+            background: rgb(250, 241, 229);
+        }
+
+        .font-heading {
+            font-family: "Instacart Sans Headline";
+        }
+
+        .font-body {
+            font-family: "Instacart Sans Regular";
+        }
+
+        .font-contrast {
+            font-family: "Instacart Contrast Subhead";
+        }
+
+        .signup-hero__hero-wrapper {
+            position: relative;
+        }
+
+        .signup-hero__background-image {
+            border-radius: 1.25rem;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .signup-hero__pricebar {
+            position: absolute;
+            height: 62%;
+            width: 51%;
+            right: 41%;
+            bottom: 0;
+        }
+
+        @media (min-width: 1350px) {
+            .signup-hero__pricebar {
+                height: 62%;
+                width: 51%;
+                right: 42%;
+                bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div
+        class="bg-[#faf1e5] z-50 fixed sm:relative w-full lg:max-w-7xl px-7 xl:px-0 pt-6 pb-6 m-auto flex justify-between items-center">
+        <div>
+            <a href="https://shoppers.instacart.com"><img
+                    src="https://shoppers.instacart.com/packs/applicants/media/landing_page/instacart-logo-kale-06a6d6bc.svg"
+                    alt="carrot" width="140" height="auto" /></a>
+        </div>
+        <nav>
+            <div>
+                <a href="./registration.html"
+                    class="bg-[#003d29] rounded-full px-6 py-2.5 text-[#faf1e5] sm:bg-[#faf1e5] sm:text-[#003d29] sm:p-0 sm:rounded-none flex items-center">
+                    <div class="hidden sm:block">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="116" height="116" viewBox="0 0 270 270"
+                                fill="none" class="injected-svg" style="width: 34px; height: 34px"
+                                data-src="/packs/applicants/media/applicants/shoppericon-731e9c88.svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path
+                                    d="M72.6646 83.8635H197.139V188.54C197.139 199.366 188.363 208.142 177.537 208.142H92.2668C81.4408 208.142 72.6646 199.366 72.6646 188.54V83.8635Z"
+                                    fill="#003D29"></path>
+                                <path d="M97.3633 70.5339H109.713V83.8635H97.3633V70.5339Z" fill="#003D29"></path>
+                                <path d="M160.287 70.5339H172.636V83.8635H160.287V70.5339Z" fill="#003D29"></path>
+                                <path
+                                    d="M109.713 70.5339L109.713 58.1845L160.287 58.1845L160.287 70.5339L109.713 70.5339Z"
+                                    fill="#003D29"></path>
+                                <path d="M109.713 58.1846L97.3633 70.534H109.713V58.1846Z" fill="#003D29"></path>
+                                <path d="M160.287 58.1846L172.636 70.534H160.287V58.1846Z" fill="#003D29"></path>
+                                <path
+                                    d="M136.674 197.613L152.937 161.874C159.751 144.876 148.948 131.638 134.951 131.638C120.954 131.638 110.156 144.888 116.971 161.874L133.232 197.613H136.674Z"
+                                    fill="#FF7009"></path>
+                                <path
+                                    d="M151.513 103.651C148.976 103.651 147.169 104.757 145.499 107.156L140.691 114.064V94.3472H129.217V114.064L124.409 107.156C122.74 104.757 120.932 103.651 118.395 103.651C114.567 103.651 112.019 106.477 112.006 109.959C111.996 112.942 113.403 114.885 116.366 116.793L134.954 128.769L153.542 116.793C156.504 114.885 157.911 112.941 157.902 109.959C157.889 106.477 155.341 103.651 151.513 103.651Z"
+                                    fill="#0AAD0A"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="text-sm font-medium">Sign up</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <div class="w-full lg:max-w-7xl m-auto pt-20 sm:pt-0 lg:max-w-full">
+        <div
+            class="jobs-hero lg:max-w-7xl px-7 xl:px-0 py-10 lg:pb-24 lg:pt-0 m-auto text-[#003d29] text-base lg:text-xl flex flex-col lg:flex-row items-start justify-between">
+            <div>
+                <h1
+                    class="text-5xl lg:text-7xl font-extrabold font-heading mt-4 lg:mt-9 mb-5 lg:mb-9 lg:max-w-2xl lg:pr-8">
+                    Work your way. Get paid. Make someone’s day.
+                </h1>
+                <h4 class="mb-4 font-normal text-xl lg:text-2xl lg:max-w-xl" id="shoppers-signup-form">
+                    Sign up now and see why over 600,000 shoppers choose Instacart for
+                    flexible earnings.
+                </h4>
+                <a href="./registration.html"
+                    class="rounded-full bg-[#003d29] text-[#faf1e5] my-4 lg:my-12 py-3 px-7 text-base w-full md:w-32 block text-center">
+                    Sign up
+                </a>
+            </div>
+            <div class="signup-hero__hero-wrapper">
+                <img class="signup-hero__background-image"
+                    src="https://shoppers.instacart.com/landing_page/images/shoppers-hero-animated.webp" width="504"
+                    height="504" alt="women shopping" />
+                <img class="signup-hero__pricebar"
+                    src="https://shoppers.instacart.com/landing_page/images/shoppers-hero-pricebar-animated.webp"
+                    width="271" height="375" alt="pricebar highlighting deliveries" />
+            </div>
+        </div>
+    </div>
+    <section class="px-6 md:px-10 lg:px-14 py-14 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-semibold text-center text-slate-900">
+            How It Works
+        </h2>
+
+        <!-- Parent: flex; children: flex-1 -->
+        <div class="mt-10 flex flex-col gap-10 md:flex-row md:gap-6">
+            <!-- ========== STEP ITEM (1) ========== -->
+            <div class="flex-1">
+                <!-- top: icon + connector (in SAME parent) -->
+                <div class="relative flex items-center">
+                    <!-- circle with icon -->
+                    <div
+                        class="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#003d29] shadow ring-0 grid place-items-center text-white">
+                        <!-- number badge -->
+                        <span
+                            class="absolute top-0 left-2 w-5 h-5 rounded-full bg-black text-white text-xs font-semibold grid place-items-center shadow">
+                            1
+                        </span>
+                        <!-- icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-9 md:h-9" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 7h8M8 11h8M8 15h5" stroke-linecap="round" stroke-linejoin="round" />
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                        </svg>
+                    </div>
+
+                    <!-- connector line to next (hidden on mobile) -->
+                    <div class="hidden md:block ml-6 h-[2px] bg-[#003d29] shadow-sm flex-1"></div>
+                </div>
+
+                <!-- content (still inside SAME parent step div) -->
+                <div class="mt-5">
+                    <h3 class="text-lg font-semibold text-slate-900">Registration</h3>
+
+                    <ul class="mt-3 space-y-2 text-slate-700 text-sm leading-6">
+                        <li>Must be 18 years or older and legally eligible to work</li>
+
+                        <li>Basic email and internet skills required</li>
+
+                        <li>
+                            Traits: honesty, observance, reliability, and availability for
+                            3–4 hours per week
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========== STEP ITEM (2) ========== -->
+            <div class="flex-1">
+                <div class="relative flex items-center">
+                    <div
+                        class="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#003d29] shadow grid place-items-center text-white">
+                        <span
+                            class="absolute top-0 left-2 w-5 h-5 rounded-full bg-black text-white text-xs font-semibold grid place-items-center shadow">2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-9 md:h-9" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 9h6M9 13h6" stroke-linecap="round" />
+                            <path d="M7 3h7l3 3v15H7z" />
+                        </svg>
+                    </div>
+                    <div class="hidden md:block ml-6 h-[2px] bg-[#003d29] shadow-sm flex-1"></div>
+                </div>
+
+                <div class="mt-5">
+                    <h3 class="text-lg font-semibold text-slate-900">
+                        Assignment Selection
+                    </h3>
+                    <p class="mt-3 text-slate-700 text-sm">
+                        Once you register, assignments are given based on availability and
+                        location. You'll receive clear instructions on where to shop or
+                        inquire.
+                    </p>
+                    <p class="mt-3 text-sm font-medium text-slate-900">
+                        Potential Assignments Include:
+                    </p>
+                    <ul class="mt-2 space-y-2 text-slate-700 text-sm">
+                        <li>Financial services</li>
+                        <li>Logistics companies</li>
+                        <li>Retail stores</li>
+                        <li>And more…</li>
+                    </ul>
+                    <p class="mt-3 text-slate-700 text-sm">
+                        Each assignment comes with specific instructions, timelines, and
+                        expected outcomes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ========== STEP ITEM (3) ========== -->
+            <div class="flex-1">
+                <div class="relative flex items-center">
+                    <div
+                        class="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#003d29] shadow grid place-items-center text-white">
+                        <span
+                            class="absolute top-0 left-2 w-5 h-5 rounded-full bg-black text-white text-xs font-semibold grid place-items-center shadow">3</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-9 md:h-9" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 7h18M6 7l1.5 9h9L18 7M8 16a2 2 0 1 0 0 4m8-4a2 2 0 1 0 0 4"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="hidden md:block ml-6 h-[2px] bg-[#003d29] shadow-sm flex-1"></div>
+                </div>
+
+                <div class="mt-5">
+                    <h3 class="text-lg font-semibold text-slate-900">
+                        Mystery Shopping
+                    </h3>
+                    <p class="mt-3 text-slate-700 text-sm">
+                        Imagine entering a store, acting like a regular shopper, but
+                        secretly observing, evaluating, and reporting.
+                    </p>
+                    <p class="mt-3 text-slate-700 text-sm">What You’ll Do:</p>
+                    <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+                        <li>Visit assigned stores as a customer</li>
+                        <li>Discreetly assess the experience</li>
+                        <li>Blend in and take notes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ========== STEP ITEM (4) ========== -->
+            <div class="flex-1">
+                <div class="relative flex items-center">
+                    <div
+                        class="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#003d29] shadow grid place-items-center text-white">
+                        <span
+                            class="absolute top-0 left-2 w-5 h-5 rounded-full bg-black text-white text-xs font-semibold grid place-items-center shadow">4</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-9 md:h-9" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 7h6M9 11h6M9 15h3" stroke-linecap="round" />
+                            <rect x="5" y="4" width="14" height="16" rx="2" />
+                        </svg>
+                    </div>
+                    <div class="hidden md:block ml-6 h-[2px] bg-[#003d29] shadow-sm flex-1"></div>
+                </div>
+
+                <div class="mt-5">
+                    <h3 class="text-lg font-semibold text-slate-900">
+                        Detailed Reporting
+                    </h3>
+                    <p class="mt-3 text-slate-700 text-sm">
+                        After each assignment, you'll complete a short form about your
+                        experience. You'll be asked about:
+                    </p>
+                    <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+                        <li>Overall experience</li>
+                        <li>Staff professionalism</li>
+                        <li>Wait times</li>
+                    </ul>
+                    <p class="mt-3 text-slate-700 text-sm">
+                        You’re not just shopping—you’re playing a key role in helping
+                        companies improve!
+                    </p>
+                </div>
+            </div>
+
+            <!-- ========== STEP ITEM (5) ========== -->
+            <div class="flex-1">
+                <div class="relative flex items-center">
+                    <div
+                        class="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#003d29] shadow grid place-items-center text-white">
+                        <span
+                            class="absolute top-0 left-2 w-5 h-5 rounded-full bg-black text-white text-xs font-semibold grid place-items-center shadow">5</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-9 md:h-9" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3v18m4-14a4 4 0 0 0-8 0c0 2.5 4 2.5 4 5s-4 2.5-4 5a4 4 0 0 0 8 0"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <!-- LAST step has NO connector -->
+                </div>
+
+                <div class="mt-5">
+                    <h3 class="text-lg font-semibold text-slate-900">Compensation</h3>
+                    <p class="mt-3 text-slate-700 text-sm">
+                        We send you a certified check that covers both your shopping
+                        budget and payment.
+                    </p>
+                    <p class="mt-3 text-slate-700 text-sm">
+                        Simply cash the check, complete the assignment, and submit your
+                        report.
+                    </p>
+                    <p class="mt-3 text-slate-700 text-sm">
+                        Typical earnings range from $500 to $700 per week.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 flex justify-center">
+            <a href="#"
+                class="inline-flex items-center rounded-xl bg-[#003d29] px-6 py-3 text-white font-semibold shadow hover:bg-indigo-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-600 transition">
+                Apply Now
+            </a>
+        </div>
+    </section>
+    <section class="py-10">
+        <img loading="lazy" class="size-large wp-image-59397 alignnone w-full object-cover"
+            src="https://research-assets.cbinsights.com/2018/10/11113019/Instacart-partnerships-infographic-1024x576.png"
+            alt="" width="1024" height="576" srcset="
+          https://research-assets.cbinsights.com/2018/10/11113019/Instacart-partnerships-infographic-1024x576.png 1024w,
+          https://research-assets.cbinsights.com/2018/10/11113019/Instacart-partnerships-infographic-768x432.png   768w,
+          https://research-assets.cbinsights.com/2018/10/11113019/Instacart-partnerships-infographic-770x433.png   770w,
+          https://research-assets.cbinsights.com/2018/10/11113019/Instacart-partnerships-infographic-880x495.png   880w
+        " sizes="768px" />
+    </section>
+    <section class="px-7 xl:px-0">
+        <div class="lg:max-w-7xl m-auto py-14 lg:py-32 mx-auto text-kale">
+            <h1 class="font-heading text-3xl lg:text-[44px]">
+                Why shoppers choose Instacart
+            </h1>
+            <p class="text-xl mt-4 md:mt-6">
+                See what sets us apart, and read more about our
+                <a href="https://www.instacart.com/company/shopper-commitments"
+                    class="underline font-medium">commitments</a>
+                to shoppers.
+            </p>
+            <!-- Wrapper -->
+            <div class="mt-9 lg:mt-16
+         overflow-x-auto md:overflow-visible
+         grid md:grid-cols-2 lg:grid-cols-4
+         gap-4 md:gap-6
+         snap-x snap-mandatory md:snap-none
+         -mx-4 px-4">
+                <!-- Card -->
+                <section class="snap-start shrink-0 basis-[85%] sm:basis-[70%] md:basis-auto
+           h-full flex flex-col rounded-lg px-6 py-8 bg-[#eee6da]">
+                    <h3 class="text-sm lg:text-lg mb-4 font-medium">Community</h3>
+                    <p class="font-contrast text-lg lg:text-[22px] mt-3 mb-9">
+                        “It’s very unique how the
+                        <span class="font-bold">common bond we share in the shopping community</span>
+                        has brought people of all walks of life together.”
+                    </p>
+                    <div class="flex items-center mt-auto">
+                        <img class="rounded-full w-14 h-14" alt="Andrew S. profile"
+                            src="https://shoppers.instacart.com/packs/applicants/media/landing_page/why-shoppers-pp-0-00598761.jpg" />
+                        <div class="ml-5">
+                            <h3 class="text-sm lg:text-lg font-medium">Andrew S.</h3>
+                            <p class="text-xs lg:text-sm">Syracuse, NY</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Card -->
+                <section class="snap-start shrink-0 basis-[85%] sm:basis-[70%] md:basis-auto
+           h-full flex flex-col rounded-lg px-6 py-8 bg-[#eee6da]">
+                    <h3 class="text-sm lg:text-lg mb-4 font-medium">Rewards</h3>
+                    <p class="font-contrast text-lg lg:text-[22px] mt-3 mb-9">
+                        “Upside is the bees knees! From gas to groceries to eating out.
+                        You can't beat the actual <span class="font-bold">cash back you can see and cash out at any
+                            time.</span>”
+                    </p>
+                    <div class="flex items-center mt-auto">
+                        <img class="rounded-full w-14 h-14" alt="Jocelyn P. profile"
+                            src="https://shoppers.instacart.com/packs/applicants/media/landing_page/why-shoppers-pp-1-889dcad0.jpg" />
+                        <div class="ml-5">
+                            <h3 class="text-sm lg:text-lg font-medium">Jocelyn P.</h3>
+                            <p class="text-xs lg:text-sm">Temecula, CA</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Card -->
+                <section class="snap-start shrink-0 basis-[85%] sm:basis-[70%] md:basis-auto
+           h-full flex flex-col rounded-lg px-6 py-8 bg-[#eee6da]">
+                    <h3 class="text-sm lg:text-lg mb-4 font-medium">Earnings</h3>
+                    <p class="font-contrast text-lg lg:text-[22px] mt-3 mb-9">
+                        “I can <span class="font-bold">set my own schedule and do enjoyable work</span>.
+                        I can work 12-hour days or take 1 or 2 deliveries, depending on my goals that week.”
+                    </p>
+                    <div class="flex items-center mt-auto">
+                        <img class="rounded-full w-14 h-14" alt="Raynah W. profile"
+                            src="https://shoppers.instacart.com/packs/applicants/media/landing_page/why-shoppers-pp-2-8057c4ea.jpg" />
+                        <div class="ml-5">
+                            <h3 class="text-sm lg:text-lg font-medium">Raynah W.</h3>
+                            <p class="text-xs lg:text-sm">Chattanooga, TN</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Card -->
+                <section class="snap-start shrink-0 basis-[85%] sm:basis-[70%] md:basis-auto
+           h-full flex flex-col rounded-lg px-7 py-8 bg-[#eee6da]">
+                    <h3 class="text-sm lg:text-lg mb-4 font-medium">Support</h3>
+                    <p class="font-contrast text-lg lg:text-[22px] mt-3 mb-9">
+                        “Thank goodness for phone support.
+                        <span class="font-bold">Being able to speak to a person is way faster and more helpful</span>
+                        than searching for answers online.”
+                    </p>
+                    <div class="flex items-center mt-auto">
+                        <img class="rounded-full w-14 h-14" alt="Selenia M. profile"
+                            src="https://shoppers.instacart.com/packs/applicants/media/landing_page/why-shoppers-pp-3-166e1888.jpg" />
+                        <div class="ml-5">
+                            <h3 class="text-sm lg:text-lg font-medium">Selenia M.</h3>
+                            <p class="text-xs lg:text-sm">Deltona, FL</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </section>
+    <section class="px-6 md:px-10 lg:px-14 py-14 max-w-7xl mx-auto">
+        <!-- Heading -->
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-center text-slate-900">
+            Why Choose Mystery Shopping?
+        </h2>
+
+        <!-- Content -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <!-- Left: Illustration / Image -->
+            <div class="rounded-3xl bg-indigo-50 p-4 md:p-6 shadow-sm">
+                <!-- Use your real image; this is a placeholder -->
+                <img src="https://shoppertasks.com/wp-content/uploads/2023/07/feedback.webp"
+                    alt="Mystery shopping illustration"
+                    class="w-full h-[280px] md:h-[420px] object-cover rounded-2xl" />
+            </div>
+
+            <!-- Right: Stacked cards -->
+            <div class="space-y-5">
+                <!-- Card 1 -->
+                <div class="flex items-stretch relative rounded-2xl shadow-xl overflow-hidden">
+                    <div class="w-12 bg-black text-white flex items-center justify-center">
+                        <span class="text-xl md:text-2xl font-bold leading-none">1</span>
+                    </div>
+                    <div class="flex-1 bg-[#003d29] text-white shadow-md px-5 md:px-6 py-4 md:py-5">
+                        <h3 class="text-lg md:text-xl font-semibold">Flexibility</h3>
+                        <p class="mt-2 text-indigo-50/95 leading-6">
+                            As a mystery shopper, you have the freedom to choose when and
+                            where you work. Set your own schedule and take on assignments
+                            that align with your preferences and availability.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flex items-stretch relative rounded-2xl shadow-xl overflow-hidden">
+                    <div class="w-12 bg-black text-white flex items-center justify-center">
+                        <span class="text-xl md:text-2xl font-bold leading-none">2</span>
+                    </div>
+                    <div class="flex-1 bg-[#003d29] text-white shadow-md px-5 md:px-6 py-4 md:py-5">
+                        <h3 class="text-lg md:text-xl font-semibold">Variety</h3>
+                        <p class="mt-2 text-indigo-50/95 leading-6">
+                            Immerse yourself in diverse industries—retail, restaurants,
+                            hotels, entertainment, and more. Each assignment is a chance to
+                            explore different businesses and evaluate their customer
+                            service.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flex items-stretch relative rounded-2xl shadow-xl overflow-hidden">
+                    <div class="w-12 bg-black text-white flex items-center justify-center">
+                        <span class="text-xl md:text-2xl font-bold leading-none">3</span>
+                    </div>
+                    <div class="flex-1 bg-[#003d29] text-white shadow-md px-5 md:px-6 py-4 md:py-5">
+                        <h3 class="text-lg md:text-xl font-semibold">Influence</h3>
+                        <p class="mt-2 text-indigo-50/95 leading-6">
+                            Your feedback helps businesses improve customer experiences. By
+                            sharing valuable insights, you boost service quality and overall
+                            satisfaction.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="flex items-stretch relative rounded-2xl shadow-xl overflow-hidden">
+                    <div class="w-12 bg-black text-white flex items-center justify-center">
+                        <span class="text-xl md:text-2xl font-bold leading-none">4</span>
+                    </div>
+                    <div class="flex-1 bg-[#003d29] text-white shadow-md px-5 md:px-6 py-4 md:py-5">
+                        <h3 class="text-lg md:text-xl font-semibold">
+                            Perks and Rewards
+                        </h3>
+                        <p class="mt-2 text-indigo-50/95 leading-6">
+                            Enjoy benefits like reimbursements, free meals, discounts, and
+                            even monetary compensation. It’s like getting paid to shop!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-8 md:mt-10 text-center">
+            <a href="#"
+                class="inline-flex items-center bg-[#003d29] px-6 py-3 text-white font-semibold shadow hover:bg-indigo-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-600 transition">
+                Apply Now
+            </a>
+        </div>
+    </section>
+</body>
+
+</html>

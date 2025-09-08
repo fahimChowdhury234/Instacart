@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shopper Registration</title>
+  <!-- Tailwind build -->
+  <link rel="stylesheet" href="./src/output.css" />
+  <!-- (Optional) Google Fonts preload: your current <link> to .woff2 is not a stylesheet. Remove or correctly @font-face in CSS. -->
+</head>
+<body class="bg-[#dfe8f6] text-slate-800">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header / brand -->
+    <header class="flex items-center gap-4">
+      <img src="https://shoppers.instacart.com/packs/applicants/media/landing_page/instacart-logo-kale-06a6d6bc.svg" alt="logo" class="h-10">
+    </header>
+
+    <div class="bg-lime-700 h-10 w-full px-5 flex items-center mt-3 rounded">
+      <h1 class="text-2xl sm:text-3xl font-semibold text-white">Shopper Registration</h1>
+    </div>
+
+    <!-- IMPORTANT: id, action, method -->
+    <form id="registration" action="submit.php" method="post" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- LEFT -->
+      <section class="md:col-span-2 space-y-5">
+        <div class="rounded-lg border border-slate-300 bg-sky-50/40 shadow-sm p-4 sm:p-6 mt-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- FULL NAME -->
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-medium text-slate-700">Name (First/Last)</label>
+              <input name="fullname" required
+                     type="text"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300"
+                     placeholder="First Last" />
+            </div>
+
+            <!-- ADDRESS + APT -->
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-medium text-slate-700">Street (Mailing) Address</label>
+              <input name="address" required
+                     type="text"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300"
+                     placeholder="1234 Main St" />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-medium text-slate-700">Apartment / Unit (optional)</label>
+              <input name="apartment"
+                     type="text"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300"
+                     placeholder="Apt, suite, etc." />
+            </div>
+
+            <!-- CITY / STATE / ZIP -->
+            <div>
+              <label class="block text-sm font-medium text-slate-700">City</label>
+              <input name="city" required
+                     type="text"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700">State/Province</label>
+              <select name="state" required
+                      class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300">
+                <option value="">Select…</option>
+                <option>CA</option><option>NY</option><option>TX</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700">ZIP/Postal</label>
+              <input name="zip" required
+                     type="text"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+            </div>
+
+            <!-- DOB (not used in PHP, keep name if you’ll store later) -->
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-medium text-slate-700">Date of Birth</label>
+              <input name="dob"
+                     type="date"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+              <p class="mt-1 text-xs text-slate-500">You must be at least 18 years of age.</p>
+            </div>
+
+            <!-- How did you hear (optional) -->
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-medium text-slate-700">How did you hear about us?</label>
+              <select name="referral"
+                      class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300">
+                <option>— Select one —</option>
+                <option>Friend/Referral</option>
+                <option>Social Media</option>
+                <option>Search Engine</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <!-- SSN (your PHP reads it but not sending? keep if needed) -->
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-medium text-slate-700">Social Security Number (SSN)</label>
+              <input name="ssn"
+                     type="password" inputmode="numeric"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300"
+                     placeholder="###-##-####" />
+              <div class="mt-3 space-y-2 text-xs leading-5 text-slate-600">
+                <p>Ellis will not accept an EIN in place of a SSN…</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="rounded-lg border border-slate-300 bg-sky-50/40 shadow-sm p-4 sm:p-6 space-y-4">
+          <label class="flex items-start gap-3">
+            <input name="agree_terms" required type="checkbox"
+                   class="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+            <span class="text-sm">I agree to the terms detailed above.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="space-y-5">
+        <fieldset class="rounded-lg border border-sky-300 bg-sky-50/40 shadow-sm">
+          <legend class="px-3 py-2 text-sm font-semibold text-sky-900 bg-transparent ml-4">Info</legend>
+          <div class="p-4 sm:p-5 space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-700">Email</label>
+              <input name="email" required
+                     type="email"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700">Phone</label>
+              <input name="phone" required
+                     type="tel"
+                     class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="rounded-lg border border-sky-300 bg-sky-50/40 shadow-sm">
+          <legend class="px-3 py-2 text-sm font-semibold text-sky-900 bg-transparent ml-4">Mystery Shopping Experience</legend>
+          <div class="p-4 sm:p-5 space-y-4">
+            <p class="text-sm">Do you contract with any other Mystery Shopping Companies?</p>
+            <div class="flex items-center gap-6">
+              <label class="inline-flex items-center gap-2">
+                <input type="radio" name="other_msp" value="yes"
+                       class="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+                <span>Yes</span>
+              </label>
+              <label class="inline-flex items-center gap-2">
+                <input type="radio" name="other_msp" value="no"
+                       class="h-4 w-4 border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+                <span>No</span>
+              </label>
+            </div>
+            <p class="text-xs text-slate-600">
+              Visit the Mystery Shopping Providers Association (MSPA) website for companies.
+            </p>
+          </div>
+        </fieldset>
+
+        <!-- Spacer so sticky footer won't overlap -->
+        <div class="h-24"></div>
+      </aside>
+
+      <div class="md:col-span-3 h-4"></div>
+    </form>
+  </main>
+
+  <!-- Sticky bottom actions -->
+  <footer class="sticky bottom-0 left-0 right-0 bg-white/90 backdrop-blur border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <p class="text-xs sm:text-sm text-slate-500">Review your information before saving.</p>
+      <div class="flex items-center gap-3">
+        <button type="reset" form="registration"
+                class="px-4 py-2 rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50">
+          Cancel
+        </button>
+        <!-- SUBMITS THE FORM TO submit.php -->
+        <button type="submit" form="registration"
+                class="px-5 py-2.5 rounded-md bg-[#003d29] text-white font-medium shadow hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600">
+          Save
+        </button>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
