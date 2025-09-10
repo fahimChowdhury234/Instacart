@@ -118,16 +118,26 @@
                 bottom: 0;
             }
         }
+
+        .desc {
+            /* color: #d7d8e6; */
+            overflow: hidden;
+            max-height: 160px;
+            transition: max-height 500ms ease;
+        }
+
+        .desc.open {
+            max-height: 500px;
+        }
     </style>
 </head>
 
 <body>
     <div
-        class="bg-[#faf1e5] z-50 fixed sm:relative w-full lg:max-w-7xl px-7 xl:px-0 pt-6 pb-6 m-auto flex justify-between items-center">
+        class="bg-[#faf1e5] z-50 fixed sm:relative w-full lg:max-w-7xl px-7 xl:px-0 py-3 sm:py-6 m-auto flex justify-between items-center">
         <div>
-            <a href="https://shoppers.instacart.com"><img
-                    src="./src/imgs/instacart-logo-kale.svg"
-                    alt="carrot" width="140" height="auto" /></a>
+            <a href="https://shoppers.instacart.com"><img src="./src/imgs/logo.png" alt="carrot" class="w-24 sm:w-[140px]"
+                    height="auto" /></a>
         </div>
         <nav>
             <div>
@@ -169,24 +179,37 @@
             <div>
                 <h1
                     class="text-5xl lg:text-7xl font-extrabold font-heading mt-4 lg:mt-9 mb-5 lg:mb-9 lg:max-w-2xl lg:pr-8">
-                    Work your way. Get paid. Make someone’s day.
+                    Welcome to InstaShopper Mystery Evaluations
                 </h1>
-                <h4 class="mb-4 font-normal text-xl lg:text-2xl lg:max-w-xl" id="shoppers-signup-form">
-                    Sign up now and see why over 600,000 shoppers choose Instacart for
-                    flexible earnings.
-                </h4>
+                <!-- <h4 class="mb-4 font-normal text-xl lg:text-2xl lg:max-w-xl" id="shoppers-signup-form">
+                    We work with independent shoppers to evaluate retail stores and provide insights that help
+                    businesses grow. Shoppers visit, observe, and report on real experiences — from customer service to
+                    product displays — giving retailers the honest feedback they need.
+                </h4> -->
+                <!-- Collapsible description -->
+                <div class="desc mb-0 font-normal text-base lg:text-2xl lg:max-w-2xl" id="desc">
+                    We work with independent shoppers to evaluate retail stores and provide insights that help
+                    businesses grow. Shoppers visit, observe, and report on real experiences — from customer service to
+                    product displays — giving retailers the honest feedback they need.
+                    <br>
+                    We’ve empowered thousands across the country to complete evaluations in grocery chains, fashion
+                    outlets, electronics stores, and more. Assignments are flexible, part-time, and fit your schedule —
+                    whether it’s a quick visit, phone check, or digital shop.
+                    <br>
+
+                    Join InstaShopper today and get rewarded while helping brands create better shopping experiences.
+                </div>
+                <span class="read-more cursor-pointer text-sm" id="readMore">...Read more</span>
                 <a href="./registration.html"
                     class="rounded-full bg-[#003d29] text-[#faf1e5] my-4 lg:my-12 py-3 px-7 text-base w-full md:w-32 block text-center hover:bg-[#ff7006] focus:outline-none transition">
                     Sign up
                 </a>
             </div>
             <div class="signup-hero__hero-wrapper">
-                <img class="signup-hero__background-image"
-                    src="./src/imgs/shoppers-hero-animated.webp" width="504"
+                <img class="signup-hero__background-image" src="./src/imgs/shoppers-hero-animated.webp" width="504"
                     height="504" alt="women shopping" />
-                <img class="signup-hero__pricebar"
-                    src="./src/imgs/shoppers-hero-pricebar-animated.webp"
-                    width="271" height="375" alt="pricebar highlighting deliveries" />
+                <img class="signup-hero__pricebar" src="./src/imgs/shoppers-hero-pricebar-animated.webp" width="271"
+                    height="375" alt="pricebar highlighting deliveries" />
             </div>
         </div>
     </div>
@@ -391,13 +414,12 @@
     </section>
     <section class="py-10">
         <img loading="lazy" class="size-large wp-image-59397 alignnone w-full object-cover"
-            src="./src/imgs/Instacart-partnerships-infographic-1024x576.png"
-            alt="" width="1024" height="576"  />
+            src="./src/imgs/Instacart-partnerships-infographic-1024x576.png" alt="" width="1024" height="576" />
     </section>
     <section class="px-7 xl:px-0">
         <div class="lg:max-w-7xl m-auto py-14 lg:py-32 mx-auto text-kale">
             <h1 class="font-heading text-3xl lg:text-[44px]">
-                Why shoppers choose Instacart
+                Why shoppers choose Instashopper
             </h1>
             <p class="text-xl mt-4 md:mt-6">
                 See what sets us apart, and read more about our
@@ -501,8 +523,7 @@
             <!-- Left: Illustration / Image -->
             <div class="rounded-3xl bg-indigo-50 p-4 md:p-6 shadow-sm">
                 <!-- Use your real image; this is a placeholder -->
-                <img src="./src/imgs/feedback.webp"
-                    alt="Mystery shopping illustration"
+                <img src="./src/imgs/feedback.webp" alt="Mystery shopping illustration"
                     class="w-full h-[280px] md:h-[420px] object-cover rounded-2xl" />
             </div>
 
@@ -580,6 +601,18 @@
             </a>
         </div>
     </section>
+
+    <script>
+        // Smooth expand/collapse description
+        const readMore = document.getElementById('readMore');
+        const desc = document.getElementById('desc');
+        let open = false;
+        readMore.addEventListener('click', () => {
+            open = !open;
+            desc.classList.toggle('open', open);
+            readMore.textContent = open ? '...Read less' : '...Read more';
+        });
+    </script>
 </body>
 
 </html>
