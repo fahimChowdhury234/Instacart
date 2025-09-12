@@ -159,7 +159,7 @@
             <!-- DOB (not used in PHP, keep name if you’ll store later) -->
             <div class="sm:col-span-2">
               <label class="block text-sm font-medium text-slate-700">Date of Birth</label>
-              <input name="dob" type="date"
+              <input name="dob" type="text" placeholder="DD/MM/YYYY"
                 class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
               <p class="mt-1 text-xs text-slate-500">You must be at least 18 years of age.</p>
             </div>
@@ -220,14 +220,6 @@
           </div>
         </fieldset>
 
-         <!-- Terms -->
-        <div class="rounded-lg border border-slate-300 bg-sky-50/40 shadow-sm p-4 sm:p-6 space-y-4">
-          <label class="flex items-start gap-3">
-            <input name="agree_terms" required type="checkbox"
-              class="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
-            <span class="text-sm">I agree to the terms detailed above.</span>
-          </label>
-        </div>
       </aside>
 
      
@@ -236,19 +228,12 @@
 
   <!-- Sticky bottom actions -->
   <footer class="sticky bottom-0 left-0 right-0 bg-white/90 backdrop-blur border-t border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-      <p class="text-xs sm:text-sm text-slate-500">Review your information before saving.</p>
-      <div class="flex items-center gap-3">
-        <button type="reset" form="registration"
-          class="px-4 py-2 rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50">
-          Cancel
-        </button>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-end">
         <!-- SUBMITS THE FORM TO submit.php -->
         <button type="submit" form="registration"
           class="px-5 py-2.5 rounded-md bg-[#003d29] text-white font-medium shadow hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600">
-          Save
+          Submit Application
         </button>
-      </div>
     </div>
   </footer>
 </body>
