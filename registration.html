@@ -138,41 +138,42 @@
               <input name="zip" required type="text"
                 class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
             </div>
-             <div class="sm:col-span-2">
-                 <fieldset class="rounded-lg border border-sky-300 bg-sky-50/40 shadow-sm">
-          <legend class="px-3 py-2 text-sm font-semibold text-sky-900 bg-transparent ml-4">Info</legend>
-          <div class="p-4 sm:p-5 space-y-4">
-            <div>
-              <label class="block text-sm font-medium text-slate-700">Email</label>
-              <input name="email" required type="email"
-                class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+            <div class="sm:col-span-2">
+              <fieldset class="rounded-lg border border-sky-300 bg-sky-50/40 shadow-sm">
+                <legend class="px-3 py-2 text-sm font-semibold text-sky-900 bg-transparent ml-4">Info</legend>
+                <div class="p-4 sm:p-5 space-y-4">
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700">Email</label>
+                    <input name="email" required type="email"
+                      class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700">Phone</label>
+                    <input name="phone" required type="tel"
+                      class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+                  </div>
+                </div>
+              </fieldset>
             </div>
-            <div>
-              <label class="block text-sm font-medium text-slate-700">Phone</label>
-              <input name="phone" required type="tel"
-                class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
-            </div>
-          </div>
-        </fieldset>
-             </div>
 
             <!-- DOB (not used in PHP, keep name if you’ll store later) -->
             <div class="sm:col-span-2">
-              <label class="block text-sm font-medium text-slate-700">Date of Birth</label>
-              <input name="dob" type="text" placeholder="DD/MM/YYYY"
-                class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" />
+            
+              <label for="dob" class="block text-sm font-medium text-slate-700">Date of Birth</label>
+              <input id="dob" type="text" placeholder="DD/MM/YYYY" inputmode="numeric" autocomplete="bday"
+                maxlength="10" aria-invalid="false" aria-describedby="dob-hint dob-err"
+                class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300" /> 
+   
+              <div id="dob-err" class=" text-xs text-red-500" role="alert"></div>
               <p class="mt-1 text-xs text-slate-500">You must be at least 18 years of age.</p>
             </div>
 
-            <!-- SSN (your PHP reads it but not sending? keep if needed) -->
+            <!-- Current Employment -->
             <div class="sm:col-span-2">
-              <label class="block text-sm font-medium text-slate-700">Social Security Number (SSN)</label>
-              <input name="ssn" type="number" inputmode="numeric"
-                class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300"
-                placeholder="###-##-####" />
-              <div class="mt-3 space-y-2 text-xs leading-5 text-slate-600">
-                <p>InstaShopper will not accept an EIN in place of a SSN…</p>
-              </div>
+              <label class="block text-sm font-medium text-slate-700">Current Employment </label>
+              <input class="mt-1 w-full rounded-md px-3 text-sm h-9 border border-slate-300 focus:border-sky-300"
+                placeholder="Entern current employment" />
+
             </div>
             <!-- How did you hear (optional) -->
             <div class="sm:col-span-2">
@@ -190,12 +191,12 @@
           </div>
         </div>
 
-     
+
       </section>
 
       <!-- RIGHT -->
       <aside class="space-y-5">
-    
+
 
         <fieldset class="rounded-lg border border-sky-300 bg-sky-50/40 shadow-sm">
           <legend class="px-3 py-2 text-sm font-semibold text-sky-900 bg-transparent ml-4">Mystery Shopping Experience
@@ -222,20 +223,99 @@
 
       </aside>
 
-     
+
     </form>
   </main>
 
   <!-- Sticky bottom actions -->
   <footer class="sticky bottom-0 left-0 right-0 bg-white/90 backdrop-blur border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-end">
-        <!-- SUBMITS THE FORM TO submit.php -->
-        <button type="submit" form="registration"
-          class="px-5 py-2.5 rounded-md bg-[#003d29] text-white font-medium shadow hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600">
-          Submit Application
-        </button>
+      <!-- SUBMITS THE FORM TO submit.php -->
+      <button type="submit" form="registration" id="submitBtn"
+        class="px-5 py-2.5 rounded-md bg-[#003d29] text-white font-medium shadow hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600">
+        Submit Application
+      </button>
     </div>
   </footer>
 </body>
+<script>
+  const el = document.getElementById('dob');
+  const err = document.getElementById('dob-err');
+
+  // Auto-mask + validate on every keystroke
+  el.addEventListener('input', () => {
+    // keep digits only (max 8), then insert slashes: DD/MM/YYYY
+    const digits = el.value.replace(/\D/g, '').slice(0, 8);
+    el.value = digits.length >= 5
+      ? digits.replace(/^(\d{2})(\d{2})(\d{0,4}).*$/, '$1/$2/$3')
+      : digits.length >= 3
+        ? digits.replace(/^(\d{2})(\d{0,2}).*$/, '$1/$2')
+        : digits;
+
+    // Progressive validation: show helpful errors as soon as we can
+    const msg = validateProgressively(el.value);
+    setValidity(!msg, msg);
+  });
+
+  function setValidity(ok, message) {
+    if (ok) {
+      el.setAttribute('aria-invalid', 'false');
+      err.classList.remove('show');
+      err.textContent = '';
+    } else {
+      el.setAttribute('aria-invalid', 'true');
+      err.classList.add('show');
+      err.textContent = message;
+    }
+  }
+
+  function validateProgressively(value) {
+    const clean = value.replace(/\D/g, '');
+
+    // Not enough digits yet — guide, don't hard-error (but still show msg)
+    if (clean.length < 2) return ''; // too early to say anything
+    if (clean.length >= 2 && clean.length < 4) {
+      const d = Number(clean.slice(0, 2));
+      if (d === 0 || d > 31) return 'Day must be 01–31.';
+      return ''; // day looks okay so far
+    }
+    if (clean.length >= 4 && clean.length < 8) {
+      const d = Number(clean.slice(0, 2));
+      const m = Number(clean.slice(2, 4));
+      if (m === 0 || m > 12) return 'Month must be 01–12.';
+      if (d === 0 || d > 31) return 'Day must be 01–31.';
+      return ''; // day & month look okay so far
+    }
+
+    // Full 8 digits present — do full validation
+    if (!/^\d{2}\/\d{2}\/\d{4}$/.test(value)) return 'Use format DD/MM/YYYY.';
+    const [dStr, mStr, yStr] = value.split('/');
+    const d = Number(dStr), m = Number(mStr), y = Number(yStr);
+
+    const nowYear = new Date().getFullYear();
+    if (y < 1900 || y > nowYear) return `Year must be between 1900 and ${nowYear}.`;
+    if (!isRealDate(d, m, y)) return 'Not a real calendar date.';
+
+    if (!isAtLeast18(d, m, y)) return 'You must be at least 18 years old.';
+    return '';
+  }
+
+  // Exact calendar validation (incl. leap years)
+  function isRealDate(d, m, y) {
+    const dt = new Date(y, m - 1, d);
+    return dt.getFullYear() === y && dt.getMonth() === m - 1 && dt.getDate() === d;
+  }
+
+  // Age >= 18 check
+  function isAtLeast18(d, m, y) {
+    const today = new Date();
+    let age = today.getFullYear() - y;
+    const beforeBirthday =
+      today.getMonth() < (m - 1) ||
+      (today.getMonth() === (m - 1) && today.getDate() < d);
+    if (beforeBirthday) age--;
+    return age >= 18;
+  }
+</script>
 
 </html>
