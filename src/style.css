@@ -1,0 +1,126 @@
+@font-face {
+  font-weight: 400;
+  src: url("../src/fonts/Instacart_Sans_Headline-Regular-dbb0eb2d.woff2")
+    format("woff2");
+  font-family: "Instacart Sans Headline";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  src: url("../src/fonts/Instacart_Sans_Headline-SemiBold-0ae30b67.woff2")
+    format("woff2");
+  font-family: "Instacart Sans Headline";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 700;
+  src: url("../src/fonts/Instacart_Sans_Headline-Bold-9651c11c.woff2")
+    format("woff2");
+  font-family: "Instacart Sans Headline";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  src: url("../src/fonts/Instacart_Sans_Subhead-Regular-bcf5b60b.woff2")
+    format("woff2");
+  font-family: Instacart Sans Subhead;
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  src: url("../src/fonts/Instacart_Sans_Text-Regular-b0d04ed2.woff2")
+    format("woff2");
+  font-family: "Instacart Sans Regular";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  src: url("../src/fonts/Instacart_Sans_Text-SemiBold-b7454372.woff2")
+    format("woff2");
+  font-family: "Instacart Sans Regular";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 700;
+  src: url("../src/fonts/Instacart_Sans_Text-Bold-97d87ff1.woff2")
+    format("woff2");
+  font-family: "Instacart Sans Regular";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  src: url("../src/fonts/Instacart_Contrast_Subhead-Regular-9e2f6b95.woff2")
+    format("woff2");
+  font-family: "Instacart Contrast Subhead";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  src: url("../src/fonts/Instacart_Contrast_Subhead-SemiBold-7960a222.woff2")
+    format("woff2");
+  font-family: "Instacart Contrast Subhead";
+  font-display: swap;
+}
+
+body {
+  font-family: "Instacart Sans Regular";
+  background: rgb(250, 241, 229);
+}
+
+.font-heading {
+  font-family: "Instacart Sans Headline";
+}
+
+.font-body {
+  font-family: "Instacart Sans Regular";
+}
+
+.font-contrast {
+  font-family: "Instacart Contrast Subhead";
+}
+
+.signup-hero__hero-wrapper {
+  position: relative;
+}
+
+.signup-hero__background-image {
+  border-radius: 1.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.signup-hero__pricebar {
+  position: absolute;
+  height: 62%;
+  width: 51%;
+  right: 41%;
+  bottom: 0;
+}
+
+@media (min-width: 1350px) {
+  .signup-hero__pricebar {
+    height: 62%;
+    width: 51%;
+    right: 42%;
+    bottom: 0;
+  }
+}
+
+.desc {
+  /* color: #d7d8e6; */
+  overflow: hidden;
+  /* max-height: 160px; */
+  transition: max-height 500ms ease;
+}
+
+.desc.open {
+  max-height: 500px;
+}
